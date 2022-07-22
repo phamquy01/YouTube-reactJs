@@ -1,0 +1,23 @@
+{
+  "Layout": {
+    "logout": "Log out ja",
+    "changeLanguage": "Change language ja"
+  },
+  "Login": {
+    "title": "Login page... ja",
+    "hasAccount": "If you don't have account. ja",
+    "createAccount": "Click me to create new account ja",
+    "userName": "User Name ja",
+    "passWord": "Pass word ja",
+    "btnLogin": "Login"
+  },
+  "Register": {
+    "title": "Register ja"
+  },
+  "Home": {
+    "title": "Home ja"
+  },
+  "Test": {
+    "title": "Test ja"
+  }
+}

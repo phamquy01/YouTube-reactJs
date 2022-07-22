@@ -1,0 +1,23 @@
+{
+  "Layout": {
+    "logout": "Log out",
+    "changeLanguage": "Change language"
+  },
+  "Login": {
+    "title": "Login page...",
+    "hasAccount": "If you don't have account.",
+    "createAccount": "Click me to create new account",
+    "userName": "User Name",
+    "passWord": "Pass word",
+    "btnLogin": "Login"
+  },
+  "Register": {
+    "title": "Register"
+  },
+  "Home": {
+    "title": "Home"
+  },
+  "Test": {
+    "title": "Test"
+  }
+}

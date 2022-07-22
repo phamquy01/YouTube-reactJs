@@ -1,0 +1,31 @@
+.home__category-filter {
+  width: 100%;
+  overflow: hidden;
+  .active {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin: 0 0 0 10px;
+    line-height: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  .category-filter {
+    background: #eee;
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin: 0 0 0 10px;
+    line-height: 12px;
+    color: #000;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}

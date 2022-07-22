@@ -1,0 +1,25 @@
+.category-small {
+  width: 72px;
+  display: flex;
+  height: 74px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: #eee;
+  }
+
+  &__icon {
+    font-size: 20px;
+    padding: 6px 30px 6px 0px;
+    margin: 0 0px 0 30px;
+  }
+
+  &__text {
+    font-size: 10px;
+    font-weight: 400;
+    text-align: center;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["./*"],
+      "@assets/*": ["./assets/*"],
+      "@components/*": ["./components/*"],
+      "@containers/*": ["./containers/*"],
+      "@screens/*": ["./screens/*"],
+      "@services/*": ["./services/*"],
+      "@services": ["./services/index.js"],
+      "@utils/*": ["./utils/*"],
+      "@utils": ["./utils/index.js"],
+      "@store/*": ["./store/*"],
+      "@store": ["./store/index.js"],
+      "@hooks/*": ["./hooks/*"],
+      "@hooks": ["./hooks/index.js"]
+    }
+  },
+  "exclude": ["node_modules", "**/node_modules/*"]
+}

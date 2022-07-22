@@ -1,0 +1,43 @@
+@import "../../../assets/scss/variable";
+@import "../reset";
+
+.login {
+    width: 140px;
+    height: 36px;
+    padding: 5px 11px 5px;  
+    display: flex;
+    align-items: center;
+    border: 1px solid $primary-color-link;
+    border-radius: 2px;
+    background-color: transparent;
+    box-sizing: border-box;
+    &:hover {
+        cursor: pointer;
+    } 
+
+    button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        .login__icon {
+            font-size: $primary-font-icon;
+            color: $primary-color-link;
+        }
+        > p {
+            font-weight: 400;
+            margin-left: 8px;
+            color: $primary-color-link;
+            font-size: 14px;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    
+}
