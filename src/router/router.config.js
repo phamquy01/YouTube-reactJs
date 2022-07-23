@@ -1,34 +1,30 @@
-// import Details from '@/screens/Details';
-// import Home from '@screens/Home';
-// import SearchPage from '@/screens/SearchPage';
-// import Error from '@/components/_share/Error';
+import LoadablePage from '@/components/_share/load/Loadable';
 import ConstantList from '../config/AppConst';
-import LoadablePage from '@/components/_share/Loadable';
 
 const routes = [
   {
     path: ConstantList.ROOT_PATH,
     element: LoadablePage({
-      loader: () => import('@/components/screens/home/Home'),
+      loader: () => import('@/components/screens/page/Home'),
     }),
   },
   {
     path: ConstantList.ROOT_PATH + 'watch/:id',
     element: LoadablePage({
-      loader: () => import('@/components/screens/detail/Details'),
+      loader: () => import('@/components/screens/page/Details'),
     }),
     layout: 'detail',
   },
   {
     path: ConstantList.ROOT_PATH + 'result',
     element: LoadablePage({
-      loader: () => import('@/components/screens/search/SearchPage'),
+      loader: () => import('@/components/screens/page/SearchPage'),
     }),
   },
   {
     path: ConstantList.ROOT_PATH + 'session/404',
     element: LoadablePage({
-      loader: () => import('../components/_share/Error'),
+      loader: () => import('../components/screens/error/Error'),
     }),
   },
 ];

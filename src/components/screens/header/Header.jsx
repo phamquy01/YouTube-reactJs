@@ -5,12 +5,12 @@ import { IoIosSearch } from 'react-icons/io';
 import AppsSharpIcon from '@mui/icons-material/AppsSharp';
 import MoreVertSharpIcon from '@mui/icons-material/MoreVertSharp';
 import Tooltip from '@mui/material/Tooltip';
-import logo from '../../assets/image/logo.png';
+import logo from '../../../assets/image/logo.png';
 // import { searchVideo } from '@/services/SearchService';
 import { Link } from 'react-router-dom';
-import Login from './home/Login';
+import Login from '../../_share/homeShare/Login';
 import { useDispatch } from 'react-redux';
-import { searchVideoAction } from '../../store/searchSlice';
+import { searchVideoAction } from '../../../store/searchSlice';
 import { useNavigate } from 'react-router-dom';
 
 function Header({ handleMinizeSidebar }) {

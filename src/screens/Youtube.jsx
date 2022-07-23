@@ -1,7 +1,7 @@
 // import Home from '@/components/screens/home/Home';
-import Header from '@/components/_share/Header';
-import Sidebar from '@/components/_share/Sidebar';
-import SidebarSmall from '@/components/_share/SidebarSmall';
+import Sidebar from '@/components/screens/sidebar/Sidebar';
+import SidebarSmall from '@/components/screens/sidebar/SidebarSmall';
+import Header from '@/components/screens/header/Header';
 import React, { useState } from 'react';
 
 function Youtube({ children }) {

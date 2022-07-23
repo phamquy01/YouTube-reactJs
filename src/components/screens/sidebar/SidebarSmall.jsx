@@ -1,3 +1,4 @@
+import CategorySmall from '@/components/_share/category/CategorySmall';
 import React from 'react';
 import { AiFillHome, AiOutlineCompass } from 'react-icons/ai';
 import {
@@ -5,8 +6,6 @@ import {
   MdShowChart,
   MdOutlineVideoLibrary,
 } from 'react-icons/md';
-// import Category from './Category';
-import CategorySmall from './CategorySmall';
 
 function SidebarSmall() {
   return (

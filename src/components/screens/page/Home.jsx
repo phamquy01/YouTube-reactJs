@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import CategoryFilter from '@/components/_share/home/CategoryFilter';
-import VideoHome from '@/components/_share/home/VideoHome';
+import CategoryFilter from '@/components/_share/homeShare/CategoryFilter';
+import VideoHome from '@/components/_share/homeShare/VideoHome';
 import { Link } from 'react-router-dom';
 import { getVideo } from '@/services/HomeService';
 import { useSelector } from 'react-redux';

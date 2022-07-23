@@ -1,7 +1,6 @@
 import React from 'react';
-import Header from './Header';
-import Sidebar from './Sidebar';
-import '../../assets/scss/screens/_error.scss';
+import Sidebar from '../sidebar/Sidebar';
+import Header from '../header/Header';
 
 function Error() {
   return (

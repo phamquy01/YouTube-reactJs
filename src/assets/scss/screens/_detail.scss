@@ -51,9 +51,12 @@
           .interactions {
             display: flex;
             align-items: center;
-            width: 332px;
+            // width: 332px;
             height: 20px;
             color: $primary-text;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
 
             &__view {
               font-size: 14px;
@@ -139,6 +142,7 @@
             width: 616px;
             height: 400px;
             padding-top: 4px;
+            border-bottom: 1px solid #d3d3d3;
 
             &-name {
               color: $primary-main-text;

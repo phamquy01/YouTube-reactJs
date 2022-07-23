@@ -1,8 +1,8 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import Header from '../../_share/Header';
-import WatchVideo from './WatchVideo';
-import { getVideoSuggest } from '@/services/DetailService';
+import Header from '../header/Header';
+// import WatchVideo from '../detail/WatchVideo';
+import { getVideoSuggest, getVideoDetail } from '@/services/DetailService';
 import avatar from '../../../assets/image/avatar.jpg';
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
@@ -10,12 +10,15 @@ import { BsFillCheckCircleFill } from 'react-icons/bs';
 import { RiShareForwardLine } from 'react-icons/ri';
 import { FiMoreHorizontal } from 'react-icons/fi';
 import { TbPlaylistAdd } from 'react-icons/tb';
-import { ImHeadphones } from 'react-icons/im';
+// import { ImHeadphones } from 'react-icons/im';
 import Tooltip from '@mui/material/Tooltip';
-import VideoSuggest from '@/components/_share/detail/VideoSuggest';
+import VideoSuggest from '@/components/_share/detailShare/VideoSuggest';
 
 export default function Details() {
   const [listPlayList, setListPlayList] = useState([]);
+  const [listDesc, setListDesc] = useState([]);
+  console.log('listDesc', listDesc);
+
   console.log('listPlayList', listPlayList);
 
   const params = useParams();
@@ -27,7 +30,7 @@ export default function Details() {
       try {
         let res = await getVideoSuggest(videoID);
         if (res) {
-          console.log(res.data);
+          console.log('detail', res.data);
           setListPlayList(res.data.items);
         }
       } catch (err) {
@@ -36,13 +39,31 @@ export default function Details() {
     };
     getVideoDetailPage();
   }, [videoID]);
+  useEffect(() => {
+    const getDescVideo = async () => {
+      try {
+        let res = await getVideoDetail(videoID);
+        if (res) {
+          console.log('detailitem', res.data);
+          setListDesc(res.data.items);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getDescVideo();
+  }, [videoID]);
+
   return (
     <div>
       <Header />
       <div className="container">
         <div className="container__main">
           <div className="playing-video">
-            <WatchVideo id={videoID} />
+            <iframe
+              src={`https://www.youtube.com/embed/${videoID}?autoplay=1`}
+              allow="autoplay"
+              className="watch"></iframe>
           </div>
           <div className="information">
             <div className="information__content">
@@ -50,22 +71,25 @@ export default function Details() {
                 #17 TRONG DANH MỤC ÂM NHẠC THỊNH HÀNH
               </a>
               <div className="information__title">
-                Shay Nắnggg - AMEE x OBITO x HỨA KIM TUYỀN x SKIN AQUA TONE UP
-                UV | Official MV
+                {listDesc[0]?.snippet?.title}
               </div>
               <div className="more">
                 <div className="interactions">
-                  <div className="interactions__view">8.275.264 lượt xem</div>
+                  <div className="interactions__view">
+                    {listDesc[0]?.statistics?.viewCount} lượt xem
+                  </div>
                   <span className="interactions__dot">•</span>
                   <div className="interactions__time">
-                    Đã công chiếu vào 6 thg 6, 2022
+                    Đã công chiếu vào {listDesc[0]?.snippet?.publishedAt}
                   </div>
                 </div>
                 <div className="actions">
                   <Tooltip title="Tôi thích video này">
                     <div className="action">
                       <ThumbUpOutlinedIcon className="action__icon" />
-                      <div className="action__name">53N</div>
+                      <div className="action__name">
+                        {listDesc[0]?.statistics?.likeCount}N
+                      </div>
                     </div>
                   </Tooltip>
                   <Tooltip title="Tôi không thích video này">
@@ -100,14 +124,14 @@ export default function Details() {
                 <div className="information__about">
                   <div className="information__about-channel">
                     <div className="information__about-name">
-                      Moah - Nhạc Trung Channel
+                      {listDesc[0]?.snippet?.channelTitle}
                     </div>
                     <div className="information__about-status">
                       <BsFillCheckCircleFill />
                     </div>
                   </div>
                   <div className="information__about-subscriber">
-                    389 N người đăng ký
+                    {listDesc[0]?.statistics?.commentCount} N người đăng ký
                   </div>
                 </div>
                 <div className="information__subscribe">
@@ -119,10 +143,9 @@ export default function Details() {
               <div className="description">
                 <div className="description__detail">
                   <p className="description__detail-name">
-                    Shay Nắnggg - AMEE x OBITO x HỨA KIM TUYỀN x SKIN AQUA TONE
-                    UP UV
+                    {listDesc[0]?.snippet?.localized?.title}
                   </p>
-                  <div className="description__socials">
+                  {/* <div className="description__socials">
                     <ImHeadphones />
                     <span>Spotify:</span>
                     <a href="spotify.com" target="_blank">
@@ -142,21 +165,9 @@ export default function Details() {
                     <a href="spotify.com" target="_blank">
                       https://spoti.fi/3aF68f5
                     </a>
-                  </div>
+                  </div> */}
                   <p className="description__text">
-                    Ca khúc đã được nhạc sĩ Quốc Bảo cho phép sử dụng một phần
-                    nhạc ca khúc "Hai Mươi" của ca sĩ Mỹ Tâm. Cảm ơn nhạc sĩ
-                    Quốc Bảo và ca sĩ Mỹ Tâm đã truyền cảm hứng về một tuổi trẻ
-                    tươi đẹp, tích cực và tràn ngập yêu thương. Shay Nắnggg (n)
-                    : trạng thái khi gặp ai đó "toả sáng" như Mặt Trời, khiến
-                    trái tim mình ấm áp nhưng tâm trí thì "choáng ngợp" - không
-                    thể nghĩ gì khác ngoài người ấy. AMEE tin rằng mỗi cơn Shay
-                    Nắnggg đều có thể dẫn đến một happy ending nếu chúng mình đủ
-                    tự tin để tiến về phía nhau, bằng phiên bản tốt nhất của bản
-                    thân. Đừng để nắng ngăn cản mình bước ra ngoài trời, gần gũi
-                    tự nhiên, tận hưởng cuộc sống. ☀️🌻✨ Đừng để những nỗi lo
-                    sợ ngăn cản mình làm điều mình thích, gần người mình
-                    thương.💛💚💙💜❤️ Cảm ơn
+                    {listDesc[0]?.snippet?.localized?.description}
                   </p>
                 </div>
               </div>

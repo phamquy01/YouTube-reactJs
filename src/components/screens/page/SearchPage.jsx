@@ -3,9 +3,9 @@ import { Button } from '@mui/material';
 import { VscSettings } from 'react-icons/vsc';
 import Collapse from '@mui/material/Collapse';
 import { useSelector } from 'react-redux';
-import VideoSearch from '@/components/_share/search/VideoSearch';
+import VideoSearch from '@/components/_share/searchShare/VideoSearch';
 import { searchVideo } from '@/services/SearchService';
-import VideoChannel from '@/components/_share/search/VideoChannel';
+import VideoChannel from '@/components/_share/searchShare/VideoChannel';
 import { Link } from 'react-router-dom';
 
 function SearchPage() {
