@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { BsList, BsKeyboardFill } from 'react-icons/bs';
 import { FaMicrophone } from 'react-icons/fa';
-import { IoIosSearch } from 'react-icons/io';
+import { IoIosSearch, IoMdNotifications } from 'react-icons/io';
 import AppsSharpIcon from '@mui/icons-material/AppsSharp';
 import MoreVertSharpIcon from '@mui/icons-material/MoreVertSharp';
+import VideoCallIcon from '@mui/icons-material/VideoCall';
 import Tooltip from '@mui/material/Tooltip';
 import logo from '../../../assets/image/logo.png';
-// import { searchVideo } from '@/services/SearchService';
+import avatar from '../../../assets/image/avatar.jpg';
 import { Link } from 'react-router-dom';
-import Login from '../../_share/homeShare/Login';
 import { useDispatch } from 'react-redux';
 import { searchVideoAction } from '../../../store/searchSlice';
 import { useNavigate } from 'react-router-dom';
@@ -47,11 +47,9 @@ function Header({ handleMinizeSidebar }) {
               handleMinize();
             }}
           />
-          <Link to="/">
-            <div className="dashboard__logo">
-              <img src={logo} alt="logo" />
-              <span>VN</span>
-            </div>
+          <Link to="/" className="dashboard__logo">
+            <img src={logo} alt="logo" />
+            <span>VN</span>
           </Link>
         </div>
         <div className="search">
@@ -78,20 +76,42 @@ function Header({ handleMinizeSidebar }) {
               </button>
             </Link>
           </div>
-          <Tooltip title="Voice">
+          <Tooltip title="Voice" placement="bottom">
             <div className="search__voice">
               <FaMicrophone className="search__guide" />
             </div>
           </Tooltip>
         </div>
         <div className="extend">
-          <Tooltip title="Các ứng dụng Youtube">
+          <Tooltip title="Các ứng dụng Youtube" placement="bottom">
             <AppsSharpIcon className="extend__apps" />
           </Tooltip>
-          <Tooltip title="Cài đặt">
+          <Tooltip title="Cài đặt" placement="bottom">
             <MoreVertSharpIcon className="extend__more" />
           </Tooltip>
-          <Login />
+
+          <div className="user-menu">
+            <div className="user-menu__create">
+              <Tooltip title="Tạo video" placement="bottom">
+                <VideoCallIcon className="create-icon" />
+              </Tooltip>
+            </div>
+
+            <div className="user-menu__notifications">
+              <Tooltip title="Thông báo" placement="bottom">
+                <IoMdNotifications className="notification-icon" />
+              </Tooltip>
+              <div className="notification-badge">3</div>
+            </div>
+
+            <Tooltip title="Tài khoản của bạn" placement="bottom">
+              <img
+                src={avatar}
+                alt="User Avatar"
+                className="user-menu__avatar"
+              />
+            </Tooltip>
+          </div>
         </div>
       </div>
     </>

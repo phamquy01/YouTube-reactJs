@@ -1,31 +1,48 @@
+@import '../variable';
+
 .home__category-filter {
   width: 100%;
   overflow: hidden;
+
   .active {
-    background-color: #000;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 30px;
-    margin: 0 0 0 10px;
-    line-height: 12px;
+    background-color: $primary-main-text;
+    color: $primary-youtube-background;
+    padding: 8px 16px;
+    border-radius: $border-radius-small;
+    margin: 0;
+    line-height: 16px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    font-weight: 500;
+    border: 1px solid $primary-main-text;
     cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.1s ease;
+    
+    &:hover {
+      background-color: #272727;
+    }
   }
+
   .category-filter {
-    background: #eee;
-    padding: 10px 15px;
-    border-radius: 30px;
-    margin: 0 0 0 10px;
-    line-height: 12px;
-    color: #000;
+    background: $primary-sub-background;
+    color: $primary-main-text;
+    padding: 8px 16px;
+    border-radius: $border-radius-small;
+    margin: 0;
+    line-height: 16px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    font-weight: 500;
+    border: 1px solid transparent;
     cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.1s ease;
 
     &:hover {
-      background-color: #000;
-      color: #fff;
+      background-color: #e5e5e5;
+    }
+
+    &:active {
+      background-color: #d9d9d9;
     }
   }
 }

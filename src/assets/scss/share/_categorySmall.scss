@@ -1,3 +1,5 @@
+@import '../variable';
+
 .category-small {
   width: 72px;
   display: flex;
@@ -6,20 +8,36 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  transition: background-color 0.1s ease;
 
   &:hover {
-    background-color: #eee;
+    background-color: $primary-hover-background;
   }
 
   &__icon {
-    font-size: 20px;
-    padding: 6px 30px 6px 0px;
-    margin: 0 0px 0 30px;
+    font-size: $primary-font-icon;
+    color: $primary-main-text;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__text {
     font-size: 10px;
     font-weight: 400;
     text-align: center;
+    color: $primary-main-text;
+    line-height: 12px;
+    padding: 0 4px;
+  }
+
+  &--active {
+    background-color: $primary-hover-background;
+    
+    .category-small__text {
+      font-weight: 500;
+    }
   }
 }

@@ -1,19 +1,30 @@
+// Core styles
 @import './variable';
 @import './reset';
 @import './base';
+@import './layout';
+
+// Components
+@import './share/header';
 @import './share/category';
 @import './share/sideBar';
-@import './share/buttonLogin';
-@import './screens/home';
-@import './share/header';
-@import './share/login';
-@import './share/categoryFilter';
-@import './screens/searchPage';
-@import './share/videoSuggest.scss';
-@import './share/videoHome';
-@import './screens/detail';
-@import './share/loading';
 @import './share/sideBarSmall';
 @import './share/categorySmall';
+@import './share/buttonLogin';
+@import './share/login';
+@import './share/loading';
+
+// Video components
+@import './share/videoHome';
 @import './share/videoSearch';
+@import './share/videoSuggest';
 @import './share/videoChannel';
+
+// Filters
+@import './share/categoryFilter';
+
+// Screens
+@import './screens/home';
+@import './screens/searchPage';
+@import './screens/detail';
+@import './screens/error';

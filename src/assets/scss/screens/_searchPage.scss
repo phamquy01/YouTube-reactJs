@@ -1,58 +1,84 @@
+@import '../variable';
+
 .search-page {
-  background-color: #f9f9f9;
-  // height: 100vh;
-  overflow: hidden;
+  background-color: $primary-youtube-background;
+  min-height: 100vh;
   margin-top: 56px;
+  padding: 24px;
 
   &__main {
-    margin: 15px;
+    max-width: 1280px;
+    margin: 0 auto;
   }
+
   .search-page__icon {
     font-size: 14px;
-    font-weight: bold;
-    color: #606060;
+    font-weight: 500;
+    color: $primary-text;
     text-transform: uppercase;
-    width: 116px;
+    display: flex;
+    align-items: center;
     height: 36px;
+    padding: 0 12px;
+    border-radius: $border-radius-small;
+    background-color: $primary-sub-background;
+    border: 1px solid $primary-border;
+    cursor: pointer;
+    transition: all 0.1s ease;
+
+    &:hover {
+      background-color: $primary-hover-background;
+    }
   }
 
   &__field {
     display: flex;
-    justify-content: flex-start;
-    margin: 10px 14px;
-    // display: none;
+    margin: 16px 0 24px 0;
+    gap: 32px;
 
     .search-page__field__item {
-      width: 100%;
-      margin: 0 60px 0 0;
+      flex: 1;
 
       .search-page__filed__title {
         text-transform: uppercase;
         font-size: 12px;
         font-weight: 500;
-        padding: 15px 0;
+        margin-bottom: 12px;
+        color: $primary-text;
+        letter-spacing: 0.5px;
       }
 
       .search-page__option {
-        color: #646464;
-        font-size: 12px;
-        padding: 10px 0;
+        color: $primary-text;
+        font-size: 14px;
+        padding: 8px 0;
         cursor: pointer;
+        border-radius: $border-radius-small;
+        padding-left: 12px;
+        margin-left: -12px;
+        transition: background-color 0.1s ease;
+
+        &:hover {
+          background-color: $primary-hover-background;
+        }
       }
     }
   }
 
   &__list-video {
-    border-top: 1px solid #ccc;
-    width: 95%;
-    margin: 0 15px;
+    border-top: 1px solid $primary-border-light;
+    padding-top: 16px;
+
     .search-page__a {
       text-decoration: none;
-      color: #333;
+      color: inherit;
+      display: block;
     }
+
     & > hr {
-      width: 95%;
-      margin: 0 15px 10px;
+      border: none;
+      border-top: 1px solid $primary-border-light;
+      margin: 16px 0;
     }
   }
 }

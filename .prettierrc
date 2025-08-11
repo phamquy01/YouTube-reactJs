@@ -6,5 +6,5 @@
   "tabWidth": 2,
   "useTabs": false,
   "semi": true,
-  "endOfLine":"auto"
+  "endOfLine": "auto"
 }

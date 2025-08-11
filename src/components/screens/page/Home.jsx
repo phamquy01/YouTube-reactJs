@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { getVideo } from '@/services/HomeService';
 import { useSelector } from 'react-redux';
 
-export default function Home() {
+export default function Home({ filterClass, videoClass }) {
   const [listDataYoutube, setListDataYoutube] = useState([]);
   const ListVideoFilter = useSelector((state) => state.home);
   const filters = [
@@ -55,14 +55,14 @@ export default function Home() {
     <>
       {/* <Header /> */}
       <div className="home">
-        <div className="home__category-filter">
+        <div className={filterClass || 'home__category-filter'}>
           <div className="home__filter">
             {filters.map((filter, index) => (
               <CategoryFilter key={index} title={filter} />
             ))}
           </div>
         </div>
-        <div className="home__video">
+        <div className={videoClass || 'home__video'}>
           <div className="home__list">
             {(ListVideoFilter.isFilter
               ? ListVideoFilter.filterVideoPage

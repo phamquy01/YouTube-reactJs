@@ -1,61 +1,183 @@
+@import '../variable';
+
 .sidebar {
-  position: sticky;
+  position: fixed;
   top: 56px;
-  width: 284px;
-  height: 90vh;
-  padding: 20px 0;
-  overflow-y: scroll;
+  left: 0;
+  width: 240px;
+  height: calc(100vh - 56px);
+  padding: 12px 0;
+  overflow-y: auto;
   overflow-x: hidden;
-  background-color: #fff;
-  margin: 56px 10px 0 0;
+  background-color: $primary-youtube-background;
+  z-index: 50;
+  border-right: 1px solid $primary-border-light;
 
   hr {
-    color: #eee;
-    background-color: #eee;
-    width: 224px;
+    border: none;
+    border-top: 1px solid $primary-border-light;
+    margin: 12px 12px;
   }
+
+  &__user-section {
+    padding: 16px 24px;
+    border-bottom: 1px solid $primary-border-light;
+    margin-bottom: 12px;
+
+    .user-profile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      &__avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      &__info {
+        flex: 1;
+
+        .user-name {
+          font-size: 14px;
+          font-weight: 500;
+          color: $primary-main-text;
+          margin-bottom: 2px;
+        }
+
+        .user-handle {
+          font-size: 12px;
+          color: $primary-text;
+        }
+      }
+    }
+
+    .user-stats {
+      display: flex;
+      gap: 16px;
+      margin-top: 12px;
+      font-size: 12px;
+      color: $primary-text;
+
+      .stat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .stat-number {
+          font-weight: 500;
+          color: $primary-main-text;
+        }
+
+        .stat-label {
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+
   &__descLogin {
-    font-size: 14px;
-    padding: 10px 20px 10px 40px;
-    line-height: 20px;
+    font-size: 13px;
+    padding: 16px 24px;
+    line-height: 18px;
+    color: $primary-text;
   }
+
   &__title {
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 500;
-    margin: 20px 15px 20px ;
-    color: #606060;
+    margin: 16px 24px 8px 24px;
+    color: $primary-text;
     line-height: 20px;
+    letter-spacing: 0.5px;
   }
+
   &__other {
-    padding: 10px 20px 10px 30px;
-    line-height: 20px;
-    color: #606060;
-    font-size: 12px;
-    font-weight: 600;
+    padding: 16px 24px;
+    line-height: 18px;
+    color: $primary-text;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  // Personal section for logged in user
+  &__personal {
+    margin-bottom: 12px;
+
+    .personal-title {
+      font-size: 16px;
+      font-weight: 500;
+      margin: 16px 24px 8px 24px;
+      color: $primary-main-text;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  // Subscriptions section
+  &__subscriptions {
+    margin-bottom: 12px;
+
+    .subscription-item {
+      display: flex;
+      align-items: center;
+      padding: 8px 24px;
+      cursor: pointer;
+      transition: background-color 0.1s ease;
+
+      &:hover {
+        background-color: $primary-hover-background;
+      }
+
+      &__avatar {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 16px;
+      }
+
+      &__info {
+        flex: 1;
+
+        .channel-name {
+          font-size: 14px;
+          color: $primary-main-text;
+          font-weight: 400;
+        }
+      }
+
+      &__live-indicator {
+        width: 8px;
+        height: 8px;
+        background-color: $primary-red;
+        border-radius: 50%;
+        margin-left: auto;
+      }
+    }
   }
 }
 
 .sidebar::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
-/* Track */
 .sidebar::-webkit-scrollbar-track {
-  // box-shadow: inset 0 0 5px grey;
+  background: transparent;
   border-radius: 10px;
-  margin-top: 10px;
 }
 
-/* Handle */
 .sidebar::-webkit-scrollbar-thumb {
-  background: rgb(112, 112, 112);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  visibility: hidden;
+  border: 2px solid transparent;
+  background-clip: content-box;
 }
 
-/* Handle on hover */
-.sidebar:hover::-webkit-scrollbar-thumb {
-  background: rgb(147, 147, 147);
-  visibility: visible;
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+  background-clip: content-box;
 }

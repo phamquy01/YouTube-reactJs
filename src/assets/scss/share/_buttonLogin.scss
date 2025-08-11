@@ -1,22 +1,32 @@
+@import '../variable';
+
 .buttonLogin {
   display: flex;
-  justify-content: space-evenly;
-  padding: 5px 0;
-  border: 1px solid blue;
-  width: 148px;
-  margin: 0 40px 20px;
   align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: 1px solid $primary-color-link;
+  border-radius: 18px;
+  background-color: transparent;
   cursor: pointer;
-  cursor: pointer;
-  &__iconUser {
-    font-size: 24px;
-    color: blue;
-    opacity: 0.6;
+  transition: all 0.1s ease;
+  gap: 8px;
+  margin: 16px 24px;
+
+  &:hover {
+    background-color: rgba(6, 95, 212, 0.05);
   }
+
+  &__iconUser {
+    font-size: 20px;
+    color: $primary-color-link;
+  }
+
   &__text {
     font-size: 14px;
-    text-transform: uppercase;
-    color: blue;
     font-weight: 500;
+    color: $primary-color-link;
+    margin: 0;
+    white-space: nowrap;
   }
 }

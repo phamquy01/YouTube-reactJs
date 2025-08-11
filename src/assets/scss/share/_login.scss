@@ -1,43 +1,48 @@
-@import "../../../assets/scss/variable";
-@import "../reset";
+@import "../variable";
 
 .login {
-    width: 140px;
-    height: 36px;
-    padding: 5px 11px 5px;  
+  height: 36px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  border: 1px solid $primary-color-link;
+  border-radius: 18px;
+  background-color: transparent;
+  box-sizing: border-box;
+  transition: all 0.1s ease;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(6, 95, 212, 0.05);
+  }
+
+  button {
+    width: 100%;
     display: flex;
     align-items: center;
-    border: 1px solid $primary-color-link;
-    border-radius: 2px;
+    padding: 0 16px;
     background-color: transparent;
-    box-sizing: border-box;
-    &:hover {
-        cursor: pointer;
-    } 
+    border: none;
+    height: 34px;
+    border-radius: 17px;
+    gap: 8px;
 
-    button {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        padding: 0;
-        background-color: transparent;
-        border: none;
-        .login__icon {
-            font-size: $primary-font-icon;
-            color: $primary-color-link;
-        }
-        > p {
-            font-weight: 400;
-            margin-left: 8px;
-            color: $primary-color-link;
-            font-size: 14px;
-        }
-        &:hover {
-            cursor: pointer;
-        }
+    .login__icon {
+      font-size: 20px;
+      color: $primary-color-link;
     }
+
+    > p {
+      font-weight: 500;
+      color: $primary-color-link;
+      font-size: 14px;
+      margin: 0;
+      white-space: nowrap;
+    }
+
     &:hover {
-        cursor: pointer;
+      cursor: pointer;
     }
-    
+  }
 }

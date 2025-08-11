@@ -1,36 +1,46 @@
+@import '../variable';
+
 .sidebar-small {
-  position: sticky;
+  position: fixed;
   top: 56px;
+  left: 0;
   width: 72px;
-  height: 90vh;
-  padding: 10px 0;
-  background-color: #fff;
-  margin: 56px 0;
-  color: #757575;
+  height: calc(100vh - 56px);
+  padding: 12px 0;
+  background-color: $primary-youtube-background;
+  color: $primary-text;
+  z-index: 50;
+  border-right: 1px solid $primary-border-light;
 
   hr {
-    color: #eee;
-    background-color: #eee;
-    width: 224px;
+    border: none;
+    border-top: 1px solid $primary-border-light;
+    margin: 12px 0;
   }
+
   &__descLogin {
-    font-size: 14px;
-    padding: 10px 20px 10px 40px;
-    line-height: 20px;
+    font-size: 12px;
+    padding: 16px 8px;
+    line-height: 16px;
+    text-align: center;
   }
+
   &__title {
     text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 500;
-    margin: 20px 0px 20px 30px;
-    color: #606060;
-    line-height: 20px;
-  }
-  &__other {
-    padding: 10px 20px 10px 30px;
-    line-height: 20px;
-    color: #606060;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 500;
+    margin: 16px 8px 8px 8px;
+    color: $primary-text;
+    line-height: 16px;
+    text-align: center;
+  }
+
+  &__other {
+    padding: 16px 8px;
+    line-height: 16px;
+    color: $primary-text;
+    font-size: 11px;
+    font-weight: 400;
+    text-align: center;
   }
 }

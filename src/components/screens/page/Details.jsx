@@ -184,9 +184,12 @@ export default function Details() {
                 key={items.id.videoId}
                 className="detail__a">
                 <VideoSuggest
-                  thumbnail={items?.snippet?.thumbnails?.default?.url}
+                  thumbnail={items?.snippet?.thumbnails?.medium?.url}
                   title={items?.snippet?.title}
                   channelTitle={items?.snippet?.channelTitle}
+                  publishedAt={items?.snippet?.publishedAt}
+                  viewCount={items?.statistics?.viewCount}
+                  duration={items?.contentDetails?.duration}
                 />
               </Link>
             ),
